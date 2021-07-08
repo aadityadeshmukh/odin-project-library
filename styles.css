@@ -2,15 +2,12 @@ body {
   background: black;
   color: white;
   font-size: 48px;
-  margin: 0px;
 }
 .Book {
   border: 2px solid white;
-  width: 20vw;
-  height: 30vh;
+  /* width: 20vw;
+  height: 30vh; */
   border-radius: 10px;
-  padding: 0px;
-  margin: 0px;
 }
 .BookName {
   font-family: 'Montserrat', sans-serif;
