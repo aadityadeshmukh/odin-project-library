@@ -21,9 +21,21 @@ buildLibraryUI();
 function buildLibraryUI() {
   myLibrary.forEach(element => {
     console.log(element.name);
-    let booklist = document.getElementById('BookList');
+    let bookUI = document.getElementById('BookUI');
     let bookDiv = document.createElement('div');
     bookDiv.setAttribute('class', 'Book');
-    booklist.appendChild(bookDiv);
+    let paraName = document.createElement('p');
+    paraName.innerHTML = element.name;
+    paraName.setAttribute('class', 'BookName');
+    let paraAuth = document.createElement('p');
+    paraAuth.innerHTML = element.author;
+    paraAuth.setAttribute('class', 'Author');
+    let paraISBN = document.createElement('p');
+    paraISBN.innerHTML = element.isbn;
+    paraISBN.setAttribute('class', 'ISBN');
+    bookDiv.appendChild(paraName);
+    bookDiv.appendChild(paraAuth);
+    bookDiv.appendChild(paraISBN);
+    bookUI.appendChild(bookDiv);
   });
 }
