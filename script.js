@@ -15,7 +15,7 @@ function addBookToLibrary(name, author, ISBN) {
 addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234');
 addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871');
 addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912');
-addBookToLibrary('the War of Art', 'Steven Pressfield', 'ISBN2191');
+addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191');
 console.log(myLibrary);
 buildLibraryUI();
 function buildLibraryUI() {
