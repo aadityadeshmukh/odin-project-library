@@ -3,6 +3,10 @@ body {
   color: white;
   font-size: 48px;
 }
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  /* font-size: 1em; */
+}
 .BookList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
