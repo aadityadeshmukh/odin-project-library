@@ -2,3 +2,23 @@ body {
   background: black;
   color: white;
 }
+.Book {
+  border: 2px solid white;
+  width: 30vw;
+  height: 40vh;
+}
+.BookName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 54px;
+  padding-left: 20px;
+}
+.Author {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  padding-left: 20px;
+}
+.ISBN {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  padding-left: 20px;
+}
