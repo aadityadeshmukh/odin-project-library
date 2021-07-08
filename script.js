@@ -17,7 +17,13 @@ addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871');
 addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912');
 addBookToLibrary('the War of Art', 'Steven Pressfield', 'ISBN2191');
 console.log(myLibrary);
-
+buildLibraryUI();
 function buildLibraryUI() {
-  myLibrary.forEach(element => console.log(element));
+  myLibrary.forEach(element => {
+    console.log(element.name);
+    let booklist = document.getElementById('BookList');
+    let bookDiv = document.createElement('div');
+    bookDiv.setAttribute('class', 'Book');
+    booklist.appendChild(bookDiv);
+  });
 }
