@@ -15,7 +15,29 @@
     <h1>Welcome to the great library of Alexandria!</h1>
     <button id="newBookBtn">New Book</button>
     <div id="overlay">
-      <p>Add a book to library</p>
+      <p>Add a book to library:</p>
+      <label for="newBookName">Name:</label>
+      <input
+        class="textInputs"
+        type="text"
+        id="newBookName"
+        name="newBookName"
+      />
+      <label for="newBookAuthor">Author:</label>
+      <input
+        class="textInputs"
+        type="text"
+        id="newBookAuthor"
+        name="newBookAuthor"
+      />
+      <label for="newBookISBN">ISBN:</label>
+      <input
+        class="textInputs"
+        type="text"
+        id="newBookISBN"
+        name="newBookISBN"
+      />
+      <button id="submitBtn" onclick="OnSubmit()">Submit</button>
     </div>
     <section class="BookList" id="BookUI"></section>
   </body>

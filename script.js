@@ -39,3 +39,16 @@ function buildLibraryUI() {
     bookUI.appendChild(bookDiv);
   });
 }
+
+let newBtn = document.getElementById('newBookBtn');
+newBtn.onclick = function() {
+  let overlay = document.getElementById('overlay');
+  overlay.style.display = 'block';
+};
+function OnSubmit() {
+  let bookName = document.getElementById('newBookName').textContent;
+  let bookAuth = document.getElementById('newBookAuth').textContent;
+  let bookISBN = document.getElementById('newBookISBN').textContent;
+  addBookToLibrary(bookName, bookAuth, bookISBN);
+  document.getElementById('overlay').style.display = 'none';
+}

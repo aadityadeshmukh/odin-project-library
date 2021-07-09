@@ -38,7 +38,8 @@ h1 {
   padding-left: 20px;
   margin-top: 10px;
 }
-#newBookBtn {
+#newBookBtn,
+#submitBtn {
   margin-bottom: 20px;
   padding: 15px;
   /* height: 40px;
@@ -56,7 +57,13 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 2;
   cursor: pointer;
+  padding: 50px;
+}
+.textInputs {
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 10px;
 }
