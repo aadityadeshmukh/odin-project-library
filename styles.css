@@ -38,3 +38,10 @@ h1 {
   padding-left: 20px;
   margin-top: 10px;
 }
+#newBookBtn {
+  margin-bottom: 20px;
+  height: 40px;
+  width: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.3em;
+}
