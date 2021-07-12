@@ -53,8 +53,12 @@ function addCard(bookName, bookAuth, bookISBN, idx) {
   let paraISBN = document.createElement('p');
   paraISBN.innerHTML = bookISBN;
   paraISBN.setAttribute('class', 'ISBN');
+  let delBtn = document.createElement('button');
+  delBtn.setAttribute('class', 'deleteBook');
+  delBtn.innerText = 'Delete';
   bookDiv.appendChild(paraName);
   bookDiv.appendChild(paraAuth);
   bookDiv.appendChild(paraISBN);
+  bookDiv.appendChild(delBtn);
   bookUI.appendChild(bookDiv);
 }
