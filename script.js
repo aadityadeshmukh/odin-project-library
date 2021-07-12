@@ -9,7 +9,8 @@ function addBookToLibrary(name, author, ISBN) {
   //create the Book using constructor
   let newBook = new Book(name, author, ISBN);
   //add the book to the array
-  myLibrary.push(newBook);
+  let len = myLibrary.push(newBook);
+  return len;
 }
 
 addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234');
@@ -26,22 +27,23 @@ function OnSubmit() {
   let bookName = document.getElementById('newBookName').value;
   let bookAuth = document.getElementById('newBookAuthor').value;
   let bookISBN = document.getElementById('newBookISBN').value;
-  addBookToLibrary(bookName, bookAuth, bookISBN);
+  let idx = addBookToLibrary(bookName, bookAuth, bookISBN);
   document.getElementById('overlay').style.display = 'none';
   console.log(myLibrary);
-  addCard(bookName, bookAuth, bookISBN);
+  addCard(bookName, bookAuth, bookISBN, idx - 1);
 }
 buildLibraryUI();
 function buildLibraryUI() {
-  myLibrary.forEach(element => {
+  myLibrary.forEach(function(element, i) {
     console.log(element.name);
-    addCard(element.name, element.author, element.isbn);
+    addCard(element.name, element.author, element.isbn, i);
   });
 }
-function addCard(bookName, bookAuth, bookISBN) {
+function addCard(bookName, bookAuth, bookISBN, idx) {
   let bookUI = document.getElementById('BookUI');
   let bookDiv = document.createElement('div');
   bookDiv.setAttribute('class', 'Book');
+  bookDiv.setAttribute('data-index', idx);
   let paraName = document.createElement('p');
   paraName.innerHTML = bookName;
   paraName.setAttribute('class', 'BookName');
