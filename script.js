@@ -55,10 +55,18 @@ function addCard(bookName, bookAuth, bookISBN, idx) {
   paraISBN.setAttribute('class', 'ISBN');
   let delBtn = document.createElement('button');
   delBtn.setAttribute('class', 'deleteBook');
+  delBtn.setAttribute('onclick', 'deleteBook(this)');
   delBtn.innerText = 'Delete';
   bookDiv.appendChild(paraName);
   bookDiv.appendChild(paraAuth);
   bookDiv.appendChild(paraISBN);
   bookDiv.appendChild(delBtn);
   bookUI.appendChild(bookDiv);
+}
+
+function deleteBook(buttonObj) {
+  console.log(buttonObj);
+  console.log(buttonObj.parentNode.getAttribute('data-index'));
+  myLibrary.splice(buttonObj.parentNode.getAttribute('data-index'), 1);
+  buttonObj.parentNode.remove();
 }
