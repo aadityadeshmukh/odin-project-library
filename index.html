@@ -1,44 +1,43 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <h1>Welcome to the great library of Alexandria!</h1>
-    <button id="newBookBtn">New Book</button>
-    <div id="overlay">
-      <p>Add a book to library:</p>
-      <label for="newBookName">Name:</label>
-      <input
+<head>
+  <meta charset="UTF-8" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <p>Welcome to the great library of Alexandria!</p>
+  <button id="newBookBtn">New Book</button>
+  <div id="overlay">
+    <p>Add a book to library:</p>
+    <label for="newBookName">Name:</label>
+    <input
         class="textInputs"
         type="text"
         id="newBookName"
         name="newBookName"
       />
-      <label for="newBookAuthor">Author:</label>
-      <input
+    <label for="newBookAuthor">Author:</label>
+    <input
         class="textInputs"
         type="text"
         id="newBookAuthor"
         name="newBookAuthor"
       />
-      <label for="newBookISBN">ISBN:</label>
-      <input
+    <label for="newBookISBN">ISBN:</label>
+    <input
         class="textInputs"
         type="text"
         id="newBookISBN"
         name="newBookISBN"
       />
-      <button id="submitBtn" onclick="OnSubmit()">Submit</button>
-    </div>
-    <section class="BookList" id="BookUI"></section>
-  </body>
+    <button id="submitBtn" onclick="OnSubmit()">Submit</button>
+  </div>
+  <section class="BookList" id="BookUI"></section>
+</body>
+
 </html>
