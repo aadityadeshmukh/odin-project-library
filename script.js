@@ -29,9 +29,10 @@ function OnSubmit() {
   let bookAuth = document.getElementById('newBookAuthor').value;
   let bookISBN = document.getElementById('newBookISBN').value;
   let idx = addBookToLibrary(bookName, bookAuth, bookISBN);
+  let status = document.getElementById('newBookStatus').checked;
   document.getElementById('overlay').style.display = 'none';
   console.log(myLibrary);
-  addCard(bookName, bookAuth, bookISBN, idx - 1);
+  addCard(bookName, bookAuth, bookISBN, idx - 1, status);
 }
 buildLibraryUI();
 function buildLibraryUI() {
