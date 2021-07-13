@@ -6,6 +6,10 @@ function Book(name, author, ISBN, status) {
   this.isbn = ISBN;
   this.status = status;
 }
+
+Book.prototype.changeStatus = function() {
+  console.log("Boom!");
+};
 function addBookToLibrary(name, author, ISBN, status) {
   //create the Book using constructor
   let newBook = new Book(name, author, ISBN, status);
