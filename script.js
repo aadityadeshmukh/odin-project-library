@@ -8,7 +8,7 @@ function Book(name, author, ISBN, status) {
 }
 
 Book.prototype.changeStatus = function() {
-  console.log("Boom!");
+  console.log('Boom!');
 };
 function addBookToLibrary(name, author, ISBN, status) {
   //create the Book using constructor
@@ -66,6 +66,7 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   let status = document.createElement('input');
   status.setAttribute('type', 'checkbox');
   status.setAttribute('name', 'statusChk');
+  status.setAttribute('onclick', 'flipStatus(this)');
   let statusLabel = document.createElement('label');
   statusLabel.setAttribute('for', 'statusChk');
   if (readstatus === true) {
@@ -88,4 +89,9 @@ function deleteBook(buttonObj) {
   console.log(buttonObj.parentNode.getAttribute('data-index'));
   myLibrary.splice(buttonObj.parentNode.getAttribute('data-index'), 1);
   buttonObj.parentNode.remove();
+}
+
+function flipStatus(chkBoxObj) {
+  let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
+  console.log(dataObj);
 }
