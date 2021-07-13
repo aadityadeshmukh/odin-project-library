@@ -6,18 +6,18 @@ function Book(name, author, ISBN, status) {
   this.isbn = ISBN;
   this.status = status;
 }
-function addBookToLibrary(name, author, ISBN) {
+function addBookToLibrary(name, author, ISBN, status) {
   //create the Book using constructor
-  let newBook = new Book(name, author, ISBN);
+  let newBook = new Book(name, author, ISBN, status);
   //add the book to the array
   let len = myLibrary.push(newBook);
   return len;
 }
 
-addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234');
-addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871');
-addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912');
-addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191');
+addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234', true);
+addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871', true);
+addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912', true);
+addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191', true);
 console.log(myLibrary);
 let newBtn = document.getElementById('newBookBtn');
 newBtn.onclick = function() {
@@ -37,10 +37,10 @@ buildLibraryUI();
 function buildLibraryUI() {
   myLibrary.forEach(function(element, i) {
     console.log(element.name);
-    addCard(element.name, element.author, element.isbn, i);
+    addCard(element.name, element.author, element.isbn, i, element.status);
   });
 }
-function addCard(bookName, bookAuth, bookISBN, idx) {
+function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   let bookUI = document.getElementById('BookUI');
   let bookDiv = document.createElement('div');
   bookDiv.setAttribute('class', 'Book');
@@ -63,7 +63,12 @@ function addCard(bookName, bookAuth, bookISBN, idx) {
   status.setAttribute('name', 'statusChk');
   let statusLabel = document.createElement('label');
   statusLabel.setAttribute('for', 'statusChk');
-  statusLabel.innerText = 'Mark as read';
+  if (readstatus === true) {
+    status.checked = true;
+    statusLabel.innerText = 'Mark as unread';
+  } else {
+    statusLabel.innerText = 'Mark as read';
+  }
   bookDiv.appendChild(paraName);
   bookDiv.appendChild(paraAuth);
   bookDiv.appendChild(paraISBN);
