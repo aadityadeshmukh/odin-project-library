@@ -57,10 +57,18 @@ function addCard(bookName, bookAuth, bookISBN, idx) {
   delBtn.setAttribute('class', 'deleteBook');
   delBtn.setAttribute('onclick', 'deleteBook(this)');
   delBtn.innerText = 'Delete';
+  let status = document.createElement('input');
+  status.setAttribute('type', 'checkbox');
+  status.setAttribute('name', 'statusChk');
+  let statusLabel = document.createElement('label');
+  statusLabel.setAttribute('for', 'statusChk');
+  statusLabel.innerText = 'Mark as read';
   bookDiv.appendChild(paraName);
   bookDiv.appendChild(paraAuth);
   bookDiv.appendChild(paraISBN);
   bookDiv.appendChild(delBtn);
+  bookDiv.appendChild(status);
+  bookDiv.appendChild(statusLabel);
   bookUI.appendChild(bookDiv);
 }
 

@@ -68,3 +68,8 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   border-radius: 10px;
 }
+
+label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.3em;
+}
