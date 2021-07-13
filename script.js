@@ -8,7 +8,10 @@ function Book(name, author, ISBN, status) {
 }
 
 Book.prototype.changeStatus = function() {
-  console.log('Boom!');
+  if (this.status === true) this.status = false;
+  else this.status = true;
+  console.log(this);
+  console.log(this.status);
 };
 function addBookToLibrary(name, author, ISBN, status) {
   //create the Book using constructor
@@ -93,5 +96,5 @@ function deleteBook(buttonObj) {
 
 function flipStatus(chkBoxObj) {
   let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
-  console.log(dataObj);
+  dataObj.changeStatus();
 }
