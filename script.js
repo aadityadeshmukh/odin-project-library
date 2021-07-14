@@ -18,6 +18,7 @@ function addBookToLibrary(name, author, ISBN, status) {
   let newBook = new Book(name, author, ISBN, status);
   //add the book to the array
   let len = myLibrary.push(newBook);
+  localStorage.setItem('BookList', myLibrary);
   return len;
 }
 
@@ -35,8 +36,8 @@ function OnSubmit() {
   let bookName = document.getElementById('newBookName').value;
   let bookAuth = document.getElementById('newBookAuthor').value;
   let bookISBN = document.getElementById('newBookISBN').value;
-  let idx = addBookToLibrary(bookName, bookAuth, bookISBN);
   let status = document.getElementById('newBookStatus').checked;
+  let idx = addBookToLibrary(bookName, bookAuth, bookISBN, status);
   document.getElementById('overlay').style.display = 'none';
   console.log(myLibrary);
   addCard(bookName, bookAuth, bookISBN, idx - 1, status);
