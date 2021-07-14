@@ -14,8 +14,10 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(auto-fit, 1fr);
   grid-gap: 16px;
+  align-items: center;
 }
 .Book {
+  width: 30vw;
   border: 2px solid white;
   /* width: 20vw; */
   /* height: 30vh; */
