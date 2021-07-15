@@ -18,7 +18,6 @@ function addBookToLibrary(name, author, ISBN, status) {
   let newBook = new Book(name, author, ISBN, status);
   //add the book to the array
   let len = myLibrary.push(newBook);
-  localStorage.setItem('BookList', myLibrary);
   return len;
 }
 
@@ -44,6 +43,8 @@ function OnSubmit() {
 }
 buildLibraryUI();
 function buildLibraryUI() {
+  let localBooks = localStorage.getItem('BookList');
+  console.log({ localBooks });
   myLibrary.forEach(function(element, i) {
     console.log(element.name);
     addCard(element.name, element.author, element.isbn, i, element.status);
@@ -99,3 +100,5 @@ function flipStatus(chkBoxObj) {
   let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
   dataObj.changeStatus();
 }
+
+localStorage.setItem('BookList', myLibrary);
