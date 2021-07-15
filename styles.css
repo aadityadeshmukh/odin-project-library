@@ -17,10 +17,9 @@ h1 {
   align-items: center;
 }
 .Book {
-  width: 30vw;
+  width: 100%;
+  height: 100%;
   border: 2px solid white;
-  /* width: 20vw; */
-  /* height: 30vh; */
   border-radius: 10px;
 }
 .BookName {
@@ -28,10 +27,11 @@ h1 {
   font-size: 1em;
   padding-left: 20px;
   margin-bottom: 0;
+  width: 80%;
 }
 .Author {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8em;
+  font-size: 0.6em;
   padding-left: 20px;
   margin-top: 10px;
 }
