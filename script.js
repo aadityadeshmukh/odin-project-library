@@ -10,22 +10,26 @@ function Book(name, author, ISBN, status) {
 Book.prototype.changeStatus = function() {
   if (this.status === true) this.status = false;
   else this.status = true;
-  console.log(this);
-  console.log(this.status);
 };
-function addBookToLibrary(name, author, ISBN, status) {
+function addBookToLibrary(name, author, ISBN, status, isNewBook = 1) {
   //create the Book using constructor
   let newBook = new Book(name, author, ISBN, status);
   //add the book to the array
   let len = myLibrary.push(newBook);
+  console.log(isNewBook);
+  if (isNewBook === 1) {
+    localStorage.removeItem('BookList');
+    console.log('New Book');
+    localStorage.setItem('BookList', JSON.stringify(myLibrary));
+  }
+  console.log(localStorage.getItem('BookList'));
   return len;
 }
 
-addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234', true);
-addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871', true);
-addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912', true);
-addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191', true);
-console.log(myLibrary);
+addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234', true, 0);
+addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871', true, 0);
+addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912', true, 0);
+addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191', true, 0);
 let newBtn = document.getElementById('newBookBtn');
 newBtn.onclick = function() {
   let overlay = document.getElementById('overlay');
@@ -36,17 +40,15 @@ function OnSubmit() {
   let bookAuth = document.getElementById('newBookAuthor').value;
   let bookISBN = document.getElementById('newBookISBN').value;
   let status = document.getElementById('newBookStatus').checked;
-  let idx = addBookToLibrary(bookName, bookAuth, bookISBN, status);
+  let idx = addBookToLibrary(bookName, bookAuth, bookISBN, status, 1);
   document.getElementById('overlay').style.display = 'none';
-  console.log(myLibrary);
   addCard(bookName, bookAuth, bookISBN, idx - 1, status);
 }
 buildLibraryUI();
 function buildLibraryUI() {
-  let localBooks = localStorage.getItem('BookList');
-  console.log({ localBooks });
-  myLibrary.forEach(function(element, i) {
-    console.log(element.name);
+  let localBooks = JSON.parse(localStorage.getItem('BookList'));
+  console.log(localStorage.getItem('BookList'));
+  localBooks.forEach(function(element, i) {
     addCard(element.name, element.author, element.isbn, i, element.status);
   });
 }
@@ -90,8 +92,6 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
 }
 
 function deleteBook(buttonObj) {
-  console.log(buttonObj);
-  console.log(buttonObj.parentNode.getAttribute('data-index'));
   myLibrary.splice(buttonObj.parentNode.getAttribute('data-index'), 1);
   buttonObj.parentNode.remove();
 }
@@ -100,5 +100,3 @@ function flipStatus(chkBoxObj) {
   let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
   dataObj.changeStatus();
 }
-
-localStorage.setItem('BookList', myLibrary);
