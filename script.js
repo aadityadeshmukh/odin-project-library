@@ -11,25 +11,19 @@ Book.prototype.changeStatus = function() {
   if (this.status === true) this.status = false;
   else this.status = true;
 };
-function addBookToLibrary(name, author, ISBN, status, isNewBook = 1) {
+function addBookToLibrary(name, author, ISBN, status) {
   //create the Book using constructor
   let newBook = new Book(name, author, ISBN, status);
   //add the book to the array
   let len = myLibrary.push(newBook);
-  console.log(isNewBook);
-  if (isNewBook === 1) {
-    localStorage.removeItem('BookList');
-    console.log('New Book');
-    localStorage.setItem('BookList', JSON.stringify(myLibrary));
-  }
-  console.log(localStorage.getItem('BookList'));
+  localStorage.setItem(name, JSON.stringify(newBook));
   return len;
 }
 
-addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234', true, 0);
-addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871', true, 0);
-addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912', true, 0);
-addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191', true, 0);
+addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234', true);
+addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871', true);
+addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912', true);
+addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191', true);
 let newBtn = document.getElementById('newBookBtn');
 newBtn.onclick = function() {
   let overlay = document.getElementById('overlay');
@@ -40,14 +34,20 @@ function OnSubmit() {
   let bookAuth = document.getElementById('newBookAuthor').value;
   let bookISBN = document.getElementById('newBookISBN').value;
   let status = document.getElementById('newBookStatus').checked;
-  let idx = addBookToLibrary(bookName, bookAuth, bookISBN, status, 1);
+  let idx = addBookToLibrary(bookName, bookAuth, bookISBN, status);
   document.getElementById('overlay').style.display = 'none';
   addCard(bookName, bookAuth, bookISBN, idx - 1, status);
 }
 buildLibraryUI();
 function buildLibraryUI() {
-  let localBooks = JSON.parse(localStorage.getItem('BookList'));
-  console.log(localStorage.getItem('BookList'));
+  let localBooks = [];
+  let keyArray = Object.keys(localStorage);
+  console.log(keyArray);
+  for (let i = 0; i < keyArray.length; i++) {
+    if (keyArray[i] !== 'editorLastConnected')
+      localBooks.push(JSON.parse(localStorage.getItem(keyArray[i])));
+  }
+  console.log(localBooks);
   localBooks.forEach(function(element, i) {
     addCard(element.name, element.author, element.isbn, i, element.status);
   });
