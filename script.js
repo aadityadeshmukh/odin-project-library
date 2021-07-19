@@ -18,7 +18,7 @@ function addBookToLibrary(name, author, ISBN, status, isNewBook = 1) {
   let len = myLibrary.push(newBook);
   console.log(isNewBook);
   if (isNewBook === 1) {
-    // localStorage.removeItem('BookList');
+    localStorage.removeItem('BookList');
     console.log('New Book');
     localStorage.setItem('BookList', JSON.stringify(myLibrary));
   }
