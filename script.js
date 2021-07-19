@@ -92,8 +92,6 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
 }
 
 function deleteBook(buttonObj) {
-  // myLibrary.splice(buttonObj.parentNode.getAttribute('data-index'), 1);
-  // let bookName = buttonObj.parentNode.querySelector('BookName');
   let parentObj = buttonObj.parentNode;
   let bookNameElem = parentObj.querySelector('.BookName');
   console.log(bookNameElem.innerText);
