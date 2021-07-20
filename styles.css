@@ -18,7 +18,7 @@ h1 {
 }
 .Book {
   width: 300px;
-  height: 400px;
+  height: 500px;
   border: 2px solid white;
   border-radius: 10px;
   padding: 10px;
@@ -65,7 +65,6 @@ h1 {
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 2;
   cursor: pointer;
-  align-items: center;
   /* padding: 50px; */
 }
 .textInputs {
