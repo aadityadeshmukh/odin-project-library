@@ -61,6 +61,10 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   let bookDiv = document.createElement('div');
   bookDiv.setAttribute('class', 'Book');
   bookDiv.setAttribute('data-index', idx);
+  let imgSrc = document.createElement('img');
+  let baseurl = 'https://source.boringavatars.com/bauhaus/150/';
+  let trailurl = '?colors=B9D3B0,81BDA4,B28774,F88F79,F6AA93';
+  imgSrc.src = baseurl + bookName + trailurl;
   let paraName = document.createElement('p');
   paraName.innerHTML = bookName;
   paraName.setAttribute('class', 'BookName');
@@ -86,6 +90,7 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   } else {
     statusLabel.innerText = 'Mark as read';
   }
+  bookDiv.appendChild(imgSrc);
   bookDiv.appendChild(paraName);
   bookDiv.appendChild(paraAuth);
   bookDiv.appendChild(paraISBN);
