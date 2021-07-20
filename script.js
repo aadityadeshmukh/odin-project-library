@@ -121,5 +121,4 @@ function flipStatus(chkBoxObj) {
   localStorage.removeItem(bookNameElem.innerText);
   localStorage.setItem(bookNameElem.innerText, JSON.stringify(localBook));
   console.log(localStorage);
-  // dataObj.changeStatus();
 }
