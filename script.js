@@ -20,10 +20,10 @@ function addBookToLibrary(name, author, ISBN, status) {
   return len;
 }
 
-addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234', true);
-addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871', true);
-addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912', true);
-addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191', true);
+// addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234', true);
+// addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871', true);
+// addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912', true);
+// addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191', true);
 let newBtn = document.getElementById('newBookBtn');
 newBtn.onclick = function() {
   let overlay = document.getElementById('overlay');
@@ -44,8 +44,12 @@ function buildLibraryUI() {
   let keyArray = Object.keys(localStorage);
   console.log(keyArray);
   for (let i = 0; i < keyArray.length; i++) {
-    if (keyArray[i] !== 'editorLastConnected')
+    if (
+      keyArray[i] !== 'editorLastConnected' &&
+      keyArray[i] !== 'editorHasEmittedBundle'
+    ) {
       localBooks.push(JSON.parse(localStorage.getItem(keyArray[i])));
+    }
   }
   console.log(localBooks);
   localBooks.forEach(function(element, i) {
@@ -101,6 +105,15 @@ function deleteBook(buttonObj) {
 }
 
 function flipStatus(chkBoxObj) {
-  let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
-  dataObj.changeStatus();
+  // let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
+  let parentObj = chkBoxObj.parentNode;
+  let bookNameElem = parentObj.querySelector('.BookName');
+  console.log(bookNameElem.innerText);
+  let localBook = JSON.parse(localStorage.getItem(bookNameElem.innerText));
+  if (localBook.status === true) localBook.status = false;
+  else localBook.status = true;
+  localStorage.removeItem(bookNameElem.innerText);
+  localStorage.setItem(bookNameElem.innerText, JSON.stringify(localBook));
+  console.log(localStorage);
+  // dataObj.changeStatus();
 }
