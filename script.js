@@ -106,12 +106,18 @@ function deleteBook(buttonObj) {
 
 function flipStatus(chkBoxObj) {
   // let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
+  let statusLabel = chkBoxObj.parentNode.querySelector('label');
   let parentObj = chkBoxObj.parentNode;
   let bookNameElem = parentObj.querySelector('.BookName');
   console.log(bookNameElem.innerText);
   let localBook = JSON.parse(localStorage.getItem(bookNameElem.innerText));
-  if (localBook.status === true) localBook.status = false;
-  else localBook.status = true;
+  if (localBook.status === true) {
+    localBook.status = false;
+    statusLabel.innerText = 'Mark as read';
+  } else {
+    localBook.status = true;
+    statusLabel.innerText = 'Mark as unread';
+  }
   localStorage.removeItem(bookNameElem.innerText);
   localStorage.setItem(bookNameElem.innerText, JSON.stringify(localBook));
   console.log(localStorage);
