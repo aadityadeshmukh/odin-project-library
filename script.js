@@ -27,7 +27,7 @@ function addBookToLibrary(name, author, ISBN, status) {
 let newBtn = document.getElementById('newBookBtn');
 newBtn.onclick = function() {
   let overlay = document.getElementById('overlay');
-  overlay.style.display = 'block';
+  overlay.style.display = 'grid';
 };
 function OnSubmit() {
   let bookName = document.getElementById('newBookName').value;
