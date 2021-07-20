@@ -65,6 +65,7 @@ h1 {
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 2;
   cursor: pointer;
+  align-items: center;
   /* padding: 50px; */
 }
 .textInputs {
@@ -75,7 +76,7 @@ h1 {
 }
 
 label {
-  margin-left: 50px;
+  /* margin-left: 50px; */
   font-family: 'Montserrat', sans-serif;
   font-size: 0.3em;
   /* width: 40%; */
