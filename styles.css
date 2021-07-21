@@ -19,8 +19,8 @@ h1 {
 .Book {
   width: 300px;
   height: 500px;
-  /* border: 2px solid white;
-  border-radius: 10px; */
+  border: 2px solid white;
+  border-radius: 10px;
   padding: 10px;
 
   display: grid;
@@ -52,8 +52,7 @@ h1 {
   margin-top: 10px;
 }
 #newBookBtn,
-#submitBtn,
-.deleteBook {
+#submitBtn {
   margin-bottom: 20px;
   padding: 15px;
   /* height: 40px;
@@ -102,4 +101,17 @@ label {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
+  align-items: center;
+}
+.deleteBook {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.3em;
+  height: 30px;
+  width: 60px;
+  padding: 5px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.status {
+  padding: 2px;
 }

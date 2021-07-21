@@ -86,6 +86,7 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   status.setAttribute('type', 'checkbox');
   status.setAttribute('name', 'statusChk');
   status.setAttribute('onclick', 'flipStatus(this)');
+  status.setAttribute('class', 'status');
   let statusLabel = document.createElement('label');
   statusLabel.setAttribute('for', 'statusChk');
   if (readstatus === true) {
