@@ -34,16 +34,22 @@ h1 {
 }
 .BookName {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8em;
+  font-size: 0.7em;
   padding-left: 20px;
   margin-bottom: 0;
   width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .Author {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.6em;
+  font-size: 0.5em;
   padding-left: 20px;
   margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .ISBN {
   font-family: 'Montserrat', sans-serif;
