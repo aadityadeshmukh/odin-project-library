@@ -120,4 +120,8 @@ label {
 }
 .status {
   padding: 2px;
+  width: 20px;
 }
+/* .statusChk {
+  width: 120px;
+} */

@@ -89,14 +89,15 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   status.setAttribute('class', 'status');
   let statusLabel = document.createElement('label');
   statusLabel.setAttribute('for', 'statusChk');
+  statusLabel.setAttribute('class', 'statusChk');
   if (readstatus === true) {
     status.checked = true;
     statusLabel.innerText = 'Mark as unread';
   } else {
     statusLabel.innerText = 'Mark as read';
   }
-  organizeElem.appendChild(statusLabel);
   organizeElem.appendChild(status);
+  organizeElem.appendChild(statusLabel);
   bookDiv.appendChild(imgSrc);
   bookDiv.appendChild(paraName);
   bookDiv.appendChild(paraAuth);
