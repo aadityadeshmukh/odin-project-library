@@ -19,9 +19,18 @@ h1 {
 .Book {
   width: 300px;
   height: 500px;
-  border: 2px solid white;
-  border-radius: 10px;
+  /* border: 2px solid white;
+  border-radius: 10px; */
   padding: 10px;
+
+  display: grid;
+  grid:
+    '.' 2fr
+    '.' 1fr
+    '.' 1fr
+    '.' 1fr
+    '.' 1fr
+    / 1fr;
 }
 .BookName {
   font-family: 'Montserrat', sans-serif;
@@ -85,4 +94,12 @@ label {
 } */
 .newBookGridDiv {
   height: 100px;
+}
+.coverImage {
+  margin-top: 20px;
+}
+.organizeElem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
 }

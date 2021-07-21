@@ -62,6 +62,7 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   bookDiv.setAttribute('class', 'Book');
   bookDiv.setAttribute('data-index', idx);
   let imgSrc = document.createElement('img');
+  imgSrc.setAttribute('class', 'coverImage');
   let baseurl = 'https://source.boringavatars.com/bauhaus/150/';
   let trailurl = '?colors=B9D3B0,81BDA4,B28774,F88F79,F6AA93';
   imgSrc.src = baseurl + bookName + trailurl;
@@ -74,10 +75,13 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   let paraISBN = document.createElement('p');
   paraISBN.innerHTML = bookISBN;
   paraISBN.setAttribute('class', 'ISBN');
+  let organizeElem = document.createElement('div');
+  organizeElem.setAttribute('class', 'organizeElem');
   let delBtn = document.createElement('button');
   delBtn.setAttribute('class', 'deleteBook');
   delBtn.setAttribute('onclick', 'deleteBook(this)');
   delBtn.innerText = 'Delete';
+  organizeElem.appendChild(delBtn);
   let status = document.createElement('input');
   status.setAttribute('type', 'checkbox');
   status.setAttribute('name', 'statusChk');
@@ -90,13 +94,13 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   } else {
     statusLabel.innerText = 'Mark as read';
   }
+  organizeElem.appendChild(statusLabel);
+  organizeElem.appendChild(status);
   bookDiv.appendChild(imgSrc);
   bookDiv.appendChild(paraName);
   bookDiv.appendChild(paraAuth);
   bookDiv.appendChild(paraISBN);
-  bookDiv.appendChild(delBtn);
-  bookDiv.appendChild(status);
-  bookDiv.appendChild(statusLabel);
+  bookDiv.appendChild(organizeElem);
   bookUI.appendChild(bookDiv);
 }
 
