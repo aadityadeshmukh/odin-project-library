@@ -121,7 +121,7 @@ function deleteBook(buttonObj) {
 function flipStatus(chkBoxObj) {
   // let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
   let statusLabel = chkBoxObj.parentNode.querySelector('label');
-  let parentObj = chkBoxObj.parentNode;
+  let parentObj = chkBoxObj.parentNode.parentNode.parentNode;
   let bookNameElem = parentObj.querySelector('.BookName');
   console.log(bookNameElem.innerText);
   let localBook = JSON.parse(localStorage.getItem(bookNameElem.innerText));

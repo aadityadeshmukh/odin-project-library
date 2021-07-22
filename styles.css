@@ -81,7 +81,7 @@ h1 {
   z-index: 2;
   cursor: pointer;
 
-  grid-template-columns: repeat(1, 20vw);
+  grid-template-columns: repeat(1, 40vw);
   grid-template-rows: repeat(6, 1fr);
   grid-gap: 16px;
   grid-auto-flow: row dense;
@@ -151,6 +151,9 @@ label {
     grid-gap: 16px;
     align-items: center;
   }
+  .textInputs {
+    width: 70%;
+  }
 }
 @media screen and (max-width: 1450px) {
   .BookList {
@@ -160,6 +163,17 @@ label {
     grid-gap: 16px;
     align-items: center;
   }
+  #overlay {
+    grid-template-columns: repeat(1, 40vw);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 16px;
+    grid-auto-flow: row dense;
+    justify-content: center;
+    align-content: center;
+  }
+  .textInputs {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 1090px) {
   .BookList {
@@ -168,6 +182,17 @@ label {
     grid-template-rows: repeat(auto-fit, 1fr);
     grid-gap: 16px;
     align-items: center;
+  }
+  #overlay {
+    grid-template-columns: repeat(1, 40vw);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 16px;
+    grid-auto-flow: row dense;
+    justify-content: center;
+    align-content: center;
+  }
+  .textInputs {
+    width: 90%;
   }
 }
 #submitBtn {
