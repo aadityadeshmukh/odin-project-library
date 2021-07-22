@@ -128,9 +128,9 @@ label {
   padding: 2px;
   width: 20px;
 }
-/* .statusChk {
-  width: 120px;
-} */
+.statusChk {
+  text-decoration: underline;
+}
 @media screen and (max-width: 1700px) {
   .BookList {
     display: grid;
