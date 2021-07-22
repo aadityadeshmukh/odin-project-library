@@ -38,6 +38,9 @@ function OnSubmit() {
   document.getElementById('overlay').style.display = 'none';
   addCard(bookName, bookAuth, bookISBN, idx - 1, status);
 }
+function OnCancel() {
+  document.getElementById('overlay').style.display = 'none';
+}
 buildLibraryUI();
 function buildLibraryUI() {
   let localBooks = [];
