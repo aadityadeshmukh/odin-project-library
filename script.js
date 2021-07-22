@@ -110,12 +110,12 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
 }
 
 function deleteBook(buttonObj) {
-  let parentObj = buttonObj.parentNode;
+  let parentObj = buttonObj.parentNode.parentNode;
   let bookNameElem = parentObj.querySelector('.BookName');
   console.log(bookNameElem.innerText);
   localStorage.removeItem(bookNameElem.innerText);
   console.log(localStorage);
-  buttonObj.parentNode.remove();
+  parentObj.remove();
 }
 
 function flipStatus(chkBoxObj) {
