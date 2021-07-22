@@ -82,6 +82,8 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   delBtn.setAttribute('onclick', 'deleteBook(this)');
   delBtn.innerText = 'Delete';
   organizeElem.appendChild(delBtn);
+  let statusContainer = document.createElement('div');
+  statusContainer.setAttribute('class', 'statusCntnr');
   let status = document.createElement('input');
   status.setAttribute('type', 'checkbox');
   status.setAttribute('name', 'statusChk');
@@ -96,12 +98,13 @@ function addCard(bookName, bookAuth, bookISBN, idx, readstatus) {
   } else {
     statusLabel.innerText = 'Mark as read';
   }
-  organizeElem.appendChild(status);
-  organizeElem.appendChild(statusLabel);
+  statusContainer.appendChild(status);
+  statusContainer.appendChild(statusLabel);
   bookDiv.appendChild(imgSrc);
   bookDiv.appendChild(paraName);
   bookDiv.appendChild(paraAuth);
   bookDiv.appendChild(paraISBN);
+  organizeElem.appendChild(statusContainer);
   bookDiv.appendChild(organizeElem);
   bookUI.appendChild(bookDiv);
 }

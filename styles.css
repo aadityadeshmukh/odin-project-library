@@ -22,7 +22,7 @@ h1 {
   border: 2px solid white;
   border-radius: 10px;
   padding: 10px;
-
+  box-shadow: 5px 5px 5px grey;
   display: grid;
   grid:
     '.' 2fr
@@ -66,6 +66,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.3em;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px grey;
 }
 #overlay {
   position: fixed;
@@ -105,9 +106,13 @@ label {
 }
 .organizeElem {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   align-items: center;
+  /* grid-gap: 16px;
+  grid-auto-flow: row dense;
+  justify-content: end;
+  justify-items: start; */
 }
 .deleteBook {
   font-family: 'Montserrat', sans-serif;
@@ -117,6 +122,7 @@ label {
   padding: 5px;
   margin-left: 20px;
   margin-right: 10px;
+  box-shadow: 2px 2px 2px grey;
 }
 .status {
   padding: 2px;
