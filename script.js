@@ -20,10 +20,6 @@ function addBookToLibrary(name, author, ISBN, status) {
   return len;
 }
 
-// addBookToLibrary('Atomic Habits', 'James Clear', 'ISBN1234', true);
-// addBookToLibrary('Sapiens', 'Yuval Noah Harari', 'ISBN6871', true);
-// addBookToLibrary('The Art of War', 'Sun Tzu', 'ISBN9912', true);
-// addBookToLibrary('The War of Art', 'Steven Pressfield', 'ISBN2191', true);
 let newBtn = document.getElementById('newBookBtn');
 newBtn.onclick = function() {
   let overlay = document.getElementById('overlay');
@@ -122,7 +118,6 @@ function deleteBook(buttonObj) {
 }
 
 function flipStatus(chkBoxObj) {
-  // let dataObj = myLibrary[chkBoxObj.parentNode.getAttribute('data-index')];
   let statusLabel = chkBoxObj.parentNode.querySelector('label');
   let parentObj = chkBoxObj.parentNode.parentNode.parentNode;
   let bookNameElem = parentObj.querySelector('.BookName');
