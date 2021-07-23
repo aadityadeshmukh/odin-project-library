@@ -1,3 +1,3 @@
 # Project: Library
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/web-platform-zyzasw)
+- Project part of the odin project's curricullum
