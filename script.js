@@ -134,3 +134,4 @@ function flipStatus(chkBoxObj) {
   localStorage.setItem(bookNameElem.innerText, JSON.stringify(localBook));
   console.log(localStorage);
 }
+
